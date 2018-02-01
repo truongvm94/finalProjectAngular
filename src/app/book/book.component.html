@@ -1,0 +1,30 @@
+<ul class="list-unstyled navbar navbar-expand-lg navbar-light bg-light">
+  <li class="nav-item nav-link">
+    <a [routerLink]="['/book']">Book</a>
+  </li>
+  <li class="nav-item nav-link">
+    <a [routerLink]="['/chat']">Chat</a>
+  </li>
+ </ul>
+
+<div class="wrapper row">
+    <div id="search" class="col-md-3">
+        <input type="text" name="iSearch" (keyup) = "onKey($event)" placeholder="Search book">
+        <ul class="w5 list-unstyled row">
+            <li class="" *ngFor="let book of dataBook">
+                <h3>{{book.volumeInfo.title}}</h3> <br> 
+                <img src="{{book.volumeInfo.imageLinks.smallThumbnail}}" alt="not found" class="img-responsive">
+                <p><strong>Publisher: </strong>{{book.volumeInfo.publisher}} - <strong>pageCount: </strong>{{book.volumeInfo.pageCount}}</p>
+                <button (click)="addBook(book)" class="btn btn-primary btn-xs">Add book</button>
+            </li>    
+        </ul>
+    </div>
+    <div class="col-md-9">
+        
+        <app-book-list>
+            
+        </app-book-list>
+    </div>
+</div>
+
+

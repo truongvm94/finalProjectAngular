@@ -1,0 +1,18 @@
+<ul class="list-unstyled navbar navbar-expand-lg navbar-light bg-light">
+  <li class="nav-item nav-link">
+    <a [routerLink]="['/book']">Book</a>
+  </li>
+  <li class="nav-item nav-link">
+    <a [routerLink]="['/chat']">Chat</a>
+  </li>
+ </ul>
+
+
+<h1>Real Time Chat</h1>
+
+<div *ngFor="let message of messages | async">
+	{{message.$value}}
+</div>
+<input type="text" #message placeholder="Your message..">
+
+<button class="btn btn-primary btn-sm mt-3" (click)="newMessage(message.value)">Send message</button>

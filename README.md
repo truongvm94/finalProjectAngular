@@ -4,7 +4,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Account test app
 
-Acc1: ds@gmail.com - Pass: 123456
+Acc1: ds@gmail.com - Pass: 123456 <br />
 Acc2: abc@gmail.com  - Pass: 123456
 
 ## Development server

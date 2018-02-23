@@ -1,0 +1,9 @@
+.app_chat li {
+    padding: 5px 5px 0;
+    border: 1px solid;
+    margin-bottom: 10px;
+}
+.app_chat {
+    max-height: 350px;
+    overflow-y: scroll;
+}

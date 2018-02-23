@@ -1,0 +1,12 @@
+Title book: <input type="text" [(ngModel)]="book.title"> <br>
+Page count: <input type="number" [(ngModel)]="book.countPage"> <br>
+Description:<input type="text" [(ngModel)]="book.descrition"> <br>
+<button (click)="addBook()" class="btn btn-primary">Add book</button>
+
+<h1>List of data</h1>
+<div *ngFor="let b of bookDobs | async">
+    
+    <p>Book name: {{b.name}}</p> 
+    <p>Book pageCount: {{b.pagecount}} </p>
+    <p>Book descc: {{b.desc}}</p>
+</div>

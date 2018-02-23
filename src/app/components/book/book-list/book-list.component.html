@@ -1,0 +1,50 @@
+<h2 class="text-center text-primary">My book</h2>
+<ul class="list-unstyled" *ngFor="let showbook of showBooks | async">
+    <li  class="pb-5" *ngIf="showbook.user === userEmail.email">
+        
+        <h4>{{ showbook.title }}</h4>
+        <span>{{ showbook.descrition }} pages</span>
+        
+        <br>
+
+        <img src="{{showbook.thumb}}" alt="not found">
+        <button type="button" (click)="showBook($event, showbook)" class="float-right btn btn-danger btn-xs w-25" data-toggle="modal" data-target="#exampleModal">
+                Edit book
+       </button>
+        
+        <!-- Modal -->
+        <div *ngIf="showUpdate && isBookEdit.bookid == showbook.bookid">
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">{{showbook.title}}</h5>
+                <button type="button" class="close w-25" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true" class="float-right">&times;</span>
+                </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label>Name</label>
+                        <input  class="form-control" placeholder="Enter Name" #title>
+                
+                    </div>
+                    <button (click)="deleteBook(showbook)" data-dismiss="modal" class="btn btn-primary btn-sm w-25">Delete book</button>
+                    <button type="button" data-dismiss="modal" (click)="updateBook(title)" class="btn-sm btn w-25 btn-danger">Update</button>   
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                
+                </div>
+            </div>
+            </div>
+        </div>
+        </div>
+        <!-- end modal -->
+
+        
+    </li>
+</ul>
+
+
+

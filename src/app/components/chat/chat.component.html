@@ -1,0 +1,15 @@
+<app-header></app-header>
+
+<h1>Real Time Chat</h1>
+
+<div class="app_chat">
+	<ul class="list-unstyled">
+		<li *ngFor="let message of messages | async">
+			<span>{{message.user}}</span>: {{message.mess}}
+		</li>
+	</ul>
+</div>
+<form (ngSubmit)="newMessage(message.value)" class="mt-3">
+<input type="text" #message placeholder="Your message.." class="input-group-lg input-txt">
+<input type="submit" value="send message" class="btn btn-primary btn-sm float-right" (keyup)="newMessage(message.value)">
+</form>
